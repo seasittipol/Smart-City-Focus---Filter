@@ -41,15 +41,18 @@ export default function TrashBinDashborad() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex gap-2">
+      <div className="flex gap-2 p-4">
         <input
-          className="border"
+          className="border focus:outline-none p-2 bg-yellow-50"
           value={inputSearch}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             setInputSearch(e.target.value)
           }
         ></input>
-        <select className="flex gap-2 flex-col" onChange={handleSelectId}>
+        <select
+          className="flex gap-2 flex-col border p-2 focus:outline-none bg-yellow-50"
+          onChange={handleSelectId}
+        >
           <option disabled selected>
             id
           </option>
@@ -57,7 +60,7 @@ export default function TrashBinDashborad() {
           <option>Descending</option>
         </select>
         <select
-          className="flex gap-2 flex-col"
+          className="flex gap-2 flex-col border p-2 focus:outline-none bg-yellow-50"
           onChange={handleSelectFillLevel}
         >
           <option disabled selected>
@@ -68,7 +71,7 @@ export default function TrashBinDashborad() {
         </select>
       </div>
       {filteredTrashBins.map((trashBin) => (
-        <div key={trashBin.id} className="flex gap-2">
+        <div key={trashBin.id} className="flex gap-2 px-4">
           <div>{trashBin.id}</div>
           <div>{trashBin.location}</div>
           <div>{trashBin.fillLevel}</div>
